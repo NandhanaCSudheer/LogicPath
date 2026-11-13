@@ -1,0 +1,323 @@
+
+Software Requirements Specification 
+(SRS)
+
+CircuitForge 
+An Interactive Digital Circuit Design and Optimization Platform
+
+
+Version
+1.0
+Prepared By
+Nandhana Sudheer C
+Roll No
+51
+Student ID
+TVE25MCA-2051
+Date
+03 September 2026
+
+
+
+
+
+
+1. Introduction 
+1.1 Purpose 
+The purpose of this Software Requirements Specification is to define the requirements of CircuitForge: An Interactive Digital Circuit Design and Optimization Platform. The system bridges theoretical digital logic education with practical circuit design by allowing learners to study concepts, create circuits, simulate them, identify errors, optimize designs, and solve application-oriented engineering challenges. 
+1.2 Scope 
+CircuitForge is a web-based educational and engineering-design platform. Users can learn digital logic through a structured learning path, create circuits from a blank canvas using drag-and-drop components, simulate user-created designs through a custom graph-based engine, generate truth tables, receive debugging feedback, optimize circuits using Boolean rules, and solve realistic engineering missions. 
+The system is not intended to replace professional electronic design automation software. The initial scope focuses on educational digital logic and Boolean circuit design. 
+1.3 Intended Audience 
+• Students learning Digital Logic Design, Digital Electronics, Computer Organization, and related subjects. 
+• Instructors providing tutorials, engineering challenges, and assessments. 
+• Project Developer 
+• Project Guide
+1.4 Problem Definition 
+Traditional digital logic learning often separates theory from practical circuit design. Existing simulators may provide powerful circuit construction facilities but may not guide beginners through a complete learning-and-design process. CircuitForge addresses this gap by combining structured learning, independent circuit creation, simulation, debugging, explainable optimization, and real-world engineering problem solving. 
+1.5 Objectives 
+• Provide an interactive environment for learning digital logic concepts. 
+• Allow users to design circuits independently from a blank canvas. 
+• Implement a custom graph-based digital circuit simulation engine. 
+• Automatically generate truth tables and validate circuit behaviour. 
+• Detect design errors and provide understandable debugging feedback. 
+• Optimize circuits using Boolean simplification techniques and explain the applied rules. 
+• Provide scenario-based engineering missions with constraints and test cases. 
+• Track user progress and design performance.
+
+2. Overall Description 
+2.1 Product Perspective 
+CircuitForge operates as a client-server web application. The React frontend provides the learning interface and interactive circuit canvas. The Python backend processes circuit graphs, performs validation and simulation, generates truth tables, executes optimization, and evaluates challenge submissions. MongoDB stores user data, tutorials, challenges, saved circuits, versions, and results.
+Layers and its Responsibilities
+React Frontend - User interface, learning path, circuit canvas, visualization, simulation controls, results and reports. 
+Python Backend - REST APIs, graph processing, validation, simulation, truth-table generation, optimization and challenge evaluation. 
+Graph Engine - Represents gates as nodes and wires as edges; performs traversal and dependency analysis. 
+Simulation Engine - Evaluates supported gates and propagates binary values through valid circuits. 
+Optimization Engine - Applies Boolean identities and produces optimized circuit structures with explanations. 
+MongoDB - Persistent storage for users, tutorials, challenges, circuits, versions, submissions and progress.
+2.2 Product Functions 
+• User registration, login and role-based access. 
+• Structured learning path and tutorial content. 
+• Interactive drag-and-drop circuit construction. 
+• Graph-based circuit representation and validation. 
+• Custom digital circuit simulation. 
+• Automatic truth-table generation. 
+• Circuit debugging and requirement feedback. 
+• Boolean circuit optimization with explanations. 
+• Original-versus-optimized circuit comparison. 
+• Engineering mission and challenge evaluation. 
+• Progressive hints and hidden test cases. 
+• Circuit saving, loading and version history. 
+• Performance and engineering-efficiency reporting.
+2.3 User Classes 
+Student / Learner - Study tutorials, design circuits, simulate, debug, optimize, and solve missions. 
+Instructor - Manage tutorials, challenges, requirements, test cases, hints and assessment content. 
+Administrator - Manage users, system content, roles and platform-level data.
+
+3. Functional Requirements 
+FR-1 User Authentication 
+• The system shall allow a new user to register with required account information. 
+• The system shall authenticate registered users during login. 
+• The system shall maintain user roles such as learner, instructor and administrator. 
+• The system shall prevent unauthorized access to protected resources. 
+• Passwords shall be stored using secure password hashing. 
+FR-2 Learning Path and Tutorials 
+• The system shall present digital logic topics in a progressive learning path. 
+• Each tutorial shall contain explanations, examples and, where applicable, truth tables and practical applications. 
+• The system may track completion status for tutorials. 
+• The system shall provide navigation from learning content to related design activities. 
+FR-3 Circuit Builder 
+• The system shall provide a blank interactive canvas. 
+• Users shall be able to add supported logic gates and input/output components. 
+• Users shall be able to move and delete components. 
+• Users shall be able to connect components using wires. 
+• Users shall be able to modify circuit designs before simulation. 
+• Users shall not be restricted to circuits already stored in the database. 
+
+FR-4 Circuit Representation 
+• The system shall represent circuit components as graph nodes. 
+• The system shall represent connections as graph edges. 
+• Each node shall contain sufficient information to identify its gate type and configuration. 
+• The graph representation shall be transferable between frontend and backend.
+FR-5 Circuit Validation 
+• The system shall check for missing inputs or outputs. 
+• The system shall identify invalid or incomplete connections. 
+• The system shall validate supported gate input requirements. 
+• The system shall detect unsupported cyclic dependencies in combinational circuits. 
+• The system shall provide understandable validation messages.
+
+4. Simulation and Verification Requirements 
+FR-6 Custom Simulation Engine 
+• The system shall simulate valid circuits created by the user. 
+• The engine shall determine a valid evaluation order from circuit dependencies. 
+• The engine shall evaluate supported gates using Boolean logic. 
+• The engine shall propagate binary values from inputs to outputs. 
+• The simulation engine shall operate independently of the database so newly created circuits can be simulated. 
+
+Supported Initial Components
+INPUT - Provides a binary input value. 
+OUTPUT - Displays the final binary result. 
+AND - Outputs 1 when all inputs are 1. 
+OR - Outputs 1 when at least one input is 1. 
+NOT - Produces the complement of the input. 
+NAND - Complement of AND. 
+NOR - Complement of OR. X
+OR - Outputs 1 when the relevant binary inputs differ. 
+XNOR - Outputs 1 when the relevant binary inputs are equal.
+FR-7 Truth Table Generation 
+• The system shall identify the input variables of a valid combinational circuit. 
+• The system shall generate all possible binary input combinations. 
+• The simulator shall execute the circuit for each combination. 
+• The system shall display the resulting output values in tabular form. 
+• The truth table shall be usable for verification and challenge evaluation. 
+FR-8 Simulation Feedback 
+• The system shall indicate whether simulation was completed successfully. 
+• The system shall report validation errors before simulation when applicable. 
+• The system may provide step-by-step circuit playback for educational visualization.
+
+
+
+
+5. Debugging and Optimization Requirements 
+FR-9 Circuit Debugging 
+• The system shall compare observed outputs against expected outputs for test conditions. 
+• The system shall identify failed test cases. 
+• The system shall display expected and observed outputs. 
+• Where possible, the system shall identify the relevant signal path or problematic gate. 
+• The system shall provide educational explanations rather than only a generic error. 
+FR-10 Boolean Optimization 
+• The system shall analyze a valid circuit for supported simplification opportunities. 
+• The optimizer shall preserve functional behaviour while simplifying a circuit. 
+• The system shall support Boolean identities such as A + 0 = A, A · 1 = A, A + A = A, A · A = A, A + A' = 1, A · A' = 0, and double negation. 
+• The system shall calculate relevant before-and-after metrics. 
+FR-11 Explainable Optimization 
+• The system shall record the optimization rule applied at each supported transformation. 
+• The system shall identify affected logic or gates where feasible. 
+• The system shall show original and optimized gate counts. 
+• The system shall present optimization steps in a learner-friendly sequence. 
+• The user shall be able to understand why the optimized design is considered better. 
+FR-12 Circuit Comparison 
+• The system shall allow comparison between an original and optimized circuit. 
+• The comparison shall include functional correctness and selected structural metrics. 
+• The system may display gate count, circuit depth, connection count and optimization percentage.
+
+6. Engineering Mission and Challenge Requirements 
+FR-13 Engineering Missions 
+• The system shall provide scenario-based digital logic problems. 
+• Each mission shall describe a practical engineering context and system requirements. 
+• The learner shall create a circuit from the requirements rather than receiving a complete solution. 
+• Missions may cover automation, security, transportation, healthcare, industrial control and other suitable digital-logic applications. 
+Example Mission: Railway Signal Controller 
+The learner is assigned the role of a junior railway automation engineer. The task is to design a logic controller that keeps a signal in a safe state whenever the track is occupied, maintenance mode is active, or an emergency condition is present. A train may proceed only when the required safety conditions are satisfied. 
+The mission definition stores requirements and expected behaviour. The student-created circuit is evaluated dynamically by the simulation and challenge engines. 
+FR-14 Challenge Constraints 
+• A challenge may specify a maximum number of gates. 
+• A challenge may specify circuit-depth or structural constraints. 
+• A challenge may require particular components where pedagogically appropriate. 
+• The system shall verify that a solution satisfies both functional and stated design constraints.
+FR-15 Test Cases and Hidden Tests 
+• Challenges shall contain test cases representing required behaviours. 
+• Selected test cases may be hidden from the learner. 
+• The system shall execute the submitted circuit against the applicable cases. 
+• The system shall report pass/fail results without exposing hidden test data. 
+FR-16 Progressive Hints 
+• The system may provide multiple levels of hints. 
+• Hints shall guide reasoning without directly revealing the complete circuit. 
+• Challenge scoring may optionally account for hint usage.
+
+7. Non-Functional Requirements 
+7.1 Performance 
+• Common circuit simulations should return results promptly for supported circuit sizes. 
+• The circuit editor should remain responsive during normal drag, move and connect operations. 
+• Truth-table generation should complete within a reasonable time for supported numbers of inputs. 
+• Optimization should not unnecessarily block the user interface. 
+7.2 Usability 
+• The interface shall be understandable to learners with basic digital-logic knowledge. 
+• Error messages shall use clear educational language. 
+• The learning path shall progress from basic concepts to advanced applications. 
+• Important simulation and optimization results shall be visually distinguishable. 
+7.3 Reliability 
+• Invalid circuit structures shall be handled without crashing the application. 
+• Failed API or database operations shall return appropriate error messages. 
+• Saved circuits shall remain retrievable after successful persistence. 
+• Simulation results shall be deterministic for the same circuit and inputs. 
+7.4 Security 
+• Passwords shall be hashed and never stored in plain text. 
+• Protected operations shall require authentication. 
+• User-specific saved designs shall be access-controlled. 
+• Administrative functions shall be restricted by role. 
+7.5 Maintainability 
+• Simulation, graph processing, optimization and challenge evaluation shall be modular. 
+• New gate types should be addable without rewriting the entire system. 
+• New Boolean optimization rules should be addable to the optimization module. 
+• Tutorials and missions should be manageable as data rather than hard-coded wherever practical.
+
+8. External Interface Requirements 
+8.1 User Interface 
+• Login and registration screens. 
+• Dashboard and learning-path view. 
+• Tutorial pages with examples and applications. 
+• Interactive circuit design canvas. 
+• Gate/component palette. 
+• Simulation and reset controls. 
+• Truth-table display. 
+• Debugging and error-feedback panel. 
+• Optimization comparison and explanation panel. 
+• Engineering mission and result screens. 
+• Progress and performance dashboard. 
+8.2 Software Interfaces
+React Frontend ↔ Python Backend - REST API communication for circuit processing, content, results and user operations. 
+Python Backend ↔ MongoDB - Persistent storage and retrieval of application data. 
+React Circuit Canvas - Node/edge visualization and interactive circuit editing using a suitable graph UI library.
+8.3 Communication Interface 
+• HTTP/HTTPS shall be used for client-server communication. 
+• RESTful APIs shall exchange structured data, preferably JSON. 
+• Authenticated endpoints shall be protected against unauthorized access.
+
+9. Business / Educational Rules 
+• A circuit must satisfy structural validation before simulation. 
+• Challenge solutions must satisfy all mandatory functional requirements. 
+• Optimization must preserve the functional behaviour of the original circuit. 
+• A challenge may impose design constraints such as gate count or circuit depth. 
+• Hidden test cases shall not be exposed to learners before submission.
+
+10. Constraints 
+• The initial system will focus on digital logic rather than analog electronics. 
+• The simulation engine will initially support a defined set of digital components. 
+• The optimization engine will initially support a defined set of Boolean identities. 
+• The project will be developed within the academic project schedule and available resources. 
+• The platform is not intended to replace professional EDA tools.
+
+11. Assumptions 
+• Users have access to a modern web browser. 
+• Users have basic computer literacy. 
+• Learners can acquire introductory binary and Boolean concepts through the platform. 
+• The server and database are available during normal operation. 
+• The initial platform focuses on combinational digital logic, with sequential logic as an extension.
+
+12. Data Requirements 
+12.1 User Data
+
+
+12.2 Tutorial Data
+
+12.3 Challenge Data
+
+12.4 Circuit Data
+
+13. Use Cases
+
+14. Use Case Scenarios
+UC-01 — Register
+
+UC-02 — Login
+
+UC-03 — Learn Digital Logic
+
+UC-04 — Take Quiz
+
+
+
+UC-05 — Design Circuit
+
+UC-06 — Simulate Circuit
+
+
+
+UC-07 — Validate Circuit
+
+UC-08 — Save Circuit
+
+UC-09 — View Progress
+
+UC-10 — Logout
+
+
+15. Acceptance Criteria 
+• A registered user can log in and access the appropriate dashboard. 
+• A learner can open a blank canvas and create a circuit independently. 
+• A valid user-created circuit can be simulated without requiring the circuit to be pre-stored in the database. 
+• The system correctly evaluates supported gates and produces expected outputs. 
+• The system can generate a truth table for supported combinational circuits. 
+• Invalid circuit structures produce meaningful validation feedback. 
+• A failed challenge test produces understandable debugging feedback. 
+• The optimizer can apply implemented Boolean rules while preserving functional behaviour. 
+• The system explains the optimization transformations it performs. 
+• Engineering missions can evaluate student-created solutions against requirements and test cases. 
+• Users can save and reload their circuits. 
+• The system records relevant challenge and learning progress.
+
+16. Future Enhancements 
+• Support for flip-flops, registers, counters and finite-state machines. 
+• Advanced sequential-circuit simulation. 
+• More sophisticated circuit-performance analysis. 
+• Fault injection and fault-tolerant design missions. 
+• Collaborative circuit design and circuit sharing. 
+• HDL integration and optional FPGA-oriented workflows. 
+• Adaptive learning recommendations based on learner performance. 
+• Expanded engineering mission library. 
+• More advanced optimization algorithms and multi-objective design analysis.
+
+17. Summary 
+CircuitForge is designed as an interactive digital circuit design and optimization platform that connects learning with practical engineering design. The platform allows learners to progress from understanding digital logic concepts to creating their own circuits, validating and simulating them, debugging failures, optimizing designs, understanding the reasons behind optimization, and applying their knowledge to realistic engineering missions.
+ The core architectural principle is that the simulation and optimization engines operate on user-created graph representations of circuits rather than only on predefined circuits stored in the database. This allows CircuitForge to function as an open design environment while using the database for persistent content, challenges, user data, saved designs and progress.

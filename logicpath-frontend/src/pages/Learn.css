@@ -1,0 +1,421 @@
+.learn-page {
+  min-height: 100vh;
+  background: #eef5f9;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: #102d4a;
+}
+
+.learn-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 25px 60px;
+}
+
+.learn-header {
+  margin-bottom: 25px;
+}
+
+.learn-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #079bbb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.learn-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 30px;
+  color: #0c2945;
+}
+
+.learn-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #6a8296;
+}
+
+/* LAYOUT */
+.learn-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 25px;
+}
+
+/* LEFT GATE SELECTOR */
+.gate-selector-list {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #dce5ec;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gate-selector-list h3 {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #70869a;
+  margin: 0 0 10px 0;
+  font-weight: 800;
+}
+
+.gate-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2eaf0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gate-nav-card:hover {
+  background: #eef7fa;
+  border-color: #079ec5;
+}
+
+.gate-nav-card.active {
+  background: #e0f6fc;
+  border-color: #079ec5;
+  box-shadow: 0 2px 8px rgba(7, 158, 197, 0.15);
+}
+
+.gate-badge {
+  background: #0c2945;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-width: 44px;
+  text-align: center;
+}
+
+.gate-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.gate-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #102d4a;
+}
+
+.gate-symbol {
+  font-size: 11px;
+  color: #70869a;
+}
+
+/* RIGHT DETAIL */
+.gate-detail-panel {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #dce5ec;
+  padding: 32px;
+  box-shadow: 0 4px 15px rgba(16, 45, 74, 0.03);
+}
+
+.gate-spec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eef3f7;
+  padding-bottom: 20px;
+}
+
+.gate-type-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #079bbb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.gate-spec-header h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #0c2945;
+}
+
+.open-builder-btn {
+  background: linear-gradient(135deg, #079bbb, #057d97);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.open-builder-btn:hover {
+  transform: translateY(-1px);
+}
+
+.spec-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.spec-card {
+  background: #f8fafc;
+  border: 1px solid #e2eaf0;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.spec-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #70869a;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.spec-code {
+  font-size: 16px;
+  font-weight: 800;
+  color: #079bbb;
+}
+
+.spec-text {
+  margin: 0;
+  font-size: 14px;
+  color: #1a3c5e;
+  line-height: 1.4;
+}
+
+.spec-desc-block {
+  margin-bottom: 30px;
+}
+
+.spec-desc-block h3 {
+  font-size: 14px;
+  color: #0c2945;
+  margin: 0 0 8px 0;
+}
+
+.spec-desc-block p {
+  margin: 0;
+  font-size: 14px;
+  color: #55728a;
+  line-height: 1.6;
+}
+
+.spec-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.spec-table-box h3,
+.spec-tester-box h3 {
+  font-size: 14px;
+  color: #0c2945;
+  margin: 0 0 6px 0;
+}
+
+.tester-sub {
+  font-size: 12px;
+  color: #70869a;
+  margin: 0 0 18px 0;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid #dce5ec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.spec-table th {
+  background: #0c2945;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.spec-table td {
+  padding: 8px 12px;
+  text-align: center;
+  border-bottom: 1px solid #eef3f7;
+}
+
+.t-val-1 {
+  color: #0284c7;
+  font-weight: 800;
+}
+
+.t-val-0 {
+  color: #64748b;
+}
+
+/* INTERACTIVE TESTER */
+.spec-tester-box {
+  background: #f8fafc;
+  border: 1px solid #e2eaf0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.interactive-gate-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: #0d1929;
+  border-radius: 10px;
+}
+
+.inputs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.test-input-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.test-input-btn.high {
+  background: #00e5ff;
+  color: #0c2945;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.test-input-btn.low {
+  background: #334d66;
+  color: #b9cbd9;
+}
+
+.gate-box-visual {
+  width: 90px;
+  height: 60px;
+  background: #11263d;
+  border: 2px solid #079ec5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(7, 158, 197, 0.3);
+}
+
+.diagram-gate-type {
+  font-size: 13px;
+  font-weight: 800;
+  color: white;
+}
+
+.diagram-gate-symbol {
+  font-size: 12px;
+  color: #00e5ff;
+}
+
+.test-output-badge {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.test-output-badge.high {
+  background: #f9a825;
+  color: #0c2945;
+  box-shadow: 0 0 10px rgba(249, 168, 37, 0.7);
+}
+
+.test-output-badge.low {
+  background: #25394d;
+  color: #7991a4;
+}
+
+@media (max-width: 900px) {
+  .learn-layout {
+    grid-template-columns: 1fr;
+  }
+  .spec-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   COMBINATIONAL CIRCUITS
+   ========================================================= */
+
+.component-section-title {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #e5e9f2;
+}
+
+/* Input / Output pills */
+
+.component-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.component-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: #eef4ff;
+  border: 1px solid #d9e5ff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Truth table horizontal scrolling */
+
+.truth-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Slightly smaller table text for larger circuits */
+
+.spec-table th,
+.spec-table td {
+  white-space: nowrap;
+}
+
+/* Multiple outputs */
+
+.outputs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Multiple input buttons */
+
+.inputs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

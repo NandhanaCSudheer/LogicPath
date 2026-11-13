@@ -1,0 +1,141 @@
+.circuit-canvas-wrapper {
+  display: flex;
+  background: #091a2b;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1e3953;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  width: 100%;
+}
+
+.circuit-canvas-palette {
+  width: 120px;
+  background: #0c253d;
+  border-right: 1px solid #1a3c5d;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.palette-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #7da5c2;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.palette-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+.palette-gate-btn {
+  height: 32px;
+  border: 1px solid #0799bd;
+  background: rgba(7, 153, 189, 0.15);
+  color: #38bdf8;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.palette-gate-btn:hover {
+  background: #0799bd;
+  color: white;
+  transform: translateX(2px);
+}
+
+.circuit-canvas-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-header-bar {
+  height: 44px;
+  background: #0d263e;
+  border-bottom: 1px solid #1e3e5f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 10;
+}
+
+.canvas-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.readonly-badge {
+  font-size: 10px;
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.canvas-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-tb-btn {
+  background: #173854;
+  border: 1px solid #2a5275;
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mini-tb-btn:hover {
+  background: #234b6e;
+  color: white;
+}
+
+.mini-tb-btn.delete {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
+}
+
+.mini-tb-btn.delete:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.embedded-canvas {
+  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  background-color: #081a2c !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  overflow: hidden;
+  user-select: none;
+}

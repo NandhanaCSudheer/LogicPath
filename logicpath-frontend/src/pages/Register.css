@@ -1,0 +1,503 @@
+/* =========================
+   REGISTER PAGE
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: #f7f8fc;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.auth-left {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 100vh;
+  padding: 42px 70px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(91, 60, 196, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(39, 96, 180, 0.25),
+      transparent 35%
+    ),
+    #101323;
+}
+
+
+/* Background grid */
+
+.auth-left::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.auth-left .brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.auth-left .brand-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067e9,
+      #4d35b5
+    );
+
+  font-size: 20px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px rgba(99, 72, 200, 0.35);
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.auth-left .hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 620px;
+
+  margin-top: 105px;
+}
+
+.auth-left .eyebrow {
+  margin: 0 0 18px;
+
+  color: #a99be8;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.auth-left h1 {
+  margin: 0;
+
+  font-size: clamp(45px, 5vw, 68px);
+  line-height: 1.03;
+
+  letter-spacing: -3px;
+}
+
+.auth-left h1 span {
+  color: #9a87f0;
+}
+
+.auth-left .hero-description {
+  max-width: 540px;
+
+  margin-top: 25px;
+
+  color: #aeb4c7;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.auth-left .process {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 45px;
+
+  color: #c8cce0;
+
+  font-size: 13px;
+}
+
+.auth-left .process span:nth-child(even) {
+  color: #7563d3;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.auth-left .copyright {
+  position: absolute;
+
+  bottom: 15px;
+  left: 70px;
+
+  color: #676d81;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.auth-right {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 60px;
+
+  background: #f7f8fc;
+}
+
+
+/* =========================
+   REGISTER CONTAINER
+========================= */
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.register-container .welcome {
+  margin: 0 0 10px;
+
+  color: #6951c9;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.register-container h2 {
+  margin: 0;
+
+  color: #161824;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  letter-spacing: -1px;
+}
+
+.register-container .subtitle {
+  margin: 10px 0 30px;
+
+  color: #777b89;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.register-container .form-group {
+  margin-bottom: 17px;
+}
+
+.register-container .form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #272936;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.register-container .form-group input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dfe1e8;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: white;
+
+  color: #1c1e28;
+
+  font-size: 14px;
+
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+.register-container .form-group input::placeholder {
+  color: #a5a8b2;
+}
+
+.register-container .form-group input:focus {
+  border-color: #735bd1;
+
+  box-shadow:
+    0 0 0 4px rgba(115, 91, 209, 0.1);
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 5px 0 20px;
+
+  color: #6c6f7d;
+
+  font-size: 13px;
+}
+
+.terms input {
+  width: 15px;
+  height: 15px;
+
+  accent-color: #6951c9;
+}
+
+
+/* =========================
+   CREATE ACCOUNT BUTTON
+========================= */
+
+.signin-button {
+  width: 100%;
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7058d4,
+      #5940b7
+    );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px rgba(89, 64, 183, 0.25);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.signin-button span {
+  font-size: 20px;
+}
+
+.signin-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(89, 64, 183, 0.32);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.register-container .divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin: 22px 0;
+
+  color: #a2a4ad;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.register-container .divider::before,
+.register-container .divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #e4e5e9;
+}
+
+
+/* =========================
+   GUEST BUTTON
+========================= */
+
+.register-container .guest-button {
+  width: 100%;
+  height: 48px;
+
+  border: 1px solid #dfe1e8;
+  border-radius: 10px;
+
+  background: white;
+
+  color: #393b47;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s,
+    border 0.2s;
+}
+
+.register-container .guest-button:hover {
+  background: #f8f8fb;
+
+  border-color: #c9cad4;
+}
+
+
+/* =========================
+   SIGN IN LINK
+========================= */
+
+.signup-text {
+  margin-top: 22px;
+
+  text-align: center;
+
+  color: #777a87;
+
+  font-size: 14px;
+}
+
+.link-button {
+  margin-left: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #654dc4;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    min-height: 100vh;
+
+    padding: 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .auth-right {
+    padding: 25px 20px;
+  }
+
+  .register-container h2 {
+    font-size: 28px;
+  }
+}
